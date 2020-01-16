@@ -1,19 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, {Component, createElement} from "react";
+import ReactDOM,{render} from "react-dom";
 
-const createapp = (props)=>{
-    return <div>
-        {/* */}
-        <h1>{props.title}</h1>
-    </div>
-
-}
-const app = createapp(
-    {
-        title:'React 16.8'
+class APP extends Component {
+    render() {
+        return (
+            React.createElement(
+                'div',
+                {
+                    className: 'app',
+                    id: 'appRoot'
+                },
+                React.createElement(
+                    'h1',
+                    {
+                        className:'title'
+                    },
+                    'JSX原理'
+                )
+            )
+        )
     }
-);
-ReactDOM.render(
-    app,
+}
+
+render(
+    <APP />,
     document.querySelector('#root')
-)
+);
