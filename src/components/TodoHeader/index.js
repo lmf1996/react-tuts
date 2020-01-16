@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function TodoHeader() {
+export default function TodoHeader(props) {
+    console.log(props)
     return(
         <h1>
-            待办事项
+            {props.title}
         </h1>
     )
 }
