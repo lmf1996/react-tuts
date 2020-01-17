@@ -3,7 +3,8 @@ import React, {Component, Fragment} from 'react';
 import {
     TodoHeader,
     TodoInput,
-    TodoList
+    TodoList,
+    Like
 } from './components'
 
 //每个组件只能return一个根元素
@@ -35,6 +36,7 @@ class App extends Component {
                 <TodoHeader title={this.state.title} x={2} y={6}/>
                 <TodoInput btnText={"add"}/>
                 <TodoList todos={this.state.todos}/>
+                <Like/>
             </Fragment>
         );
     }
