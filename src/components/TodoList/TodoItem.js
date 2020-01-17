@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 
 class TodoItem extends Component {
     render() {
+        console.log(this.props)
         return (
-            <div>
-                TodoItem
-            </div>
+            <li>
+                {this.props.title}
+            </li>
         );
     }
 }
