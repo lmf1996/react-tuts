@@ -8,10 +8,16 @@ class Like extends Component {
         }
     }
 
+    handleLikedClick = () => {
+        this.setState({
+            isLiked: !this.state.isLiked
+    })
+    }
+
     render() {
         return (
             <div>
-                <span>
+                <span onClick={this.handleLikedClick}>
                     {
                         this.state.isLiked ? '👍' : '👎'
                     }
