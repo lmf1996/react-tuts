@@ -16,16 +16,28 @@ class App extends Component {
                 id: 1,
                 title: '吃饭',
                 isCompleted: 'true',
-                name:'lmf'
+                name: 'lmf'
             },
             {
                 id: 2,
                 title: '睡觉',
                 isCompleted: 'false',
-                name:'sb'
+                name: 'sb'
             }
         ]
-    }
+    };
+
+    addTodo = (todoTitle) => {
+        this.setState({
+            /**要用concat而不能用push 注意返回值类型 **/
+            todos: this.state.todos.concat({
+                id: Math.random(),
+                title: todoTitle,
+                isCompleted: 'false',
+                name: 'sb2'
+            })
+        })
+    };
 
     render() {
         return (
@@ -33,8 +45,8 @@ class App extends Component {
             //函数式属于无状态组件
             //类式属于有状态组件
             <Fragment>
-                <TodoHeader title={this.state.title} x={2} y={6}/>
-                <TodoInput btnText={"add"}/>
+                <TodoHeader title={this.state.title}/>
+                <TodoInput addTodo={this.addTodo} btnText={"add"}/>
                 <TodoList todos={this.state.todos}/>
                 <Like/>
             </Fragment>
