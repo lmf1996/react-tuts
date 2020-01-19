@@ -15,13 +15,13 @@ class App extends Component {
             {
                 id: 1,
                 title: '吃饭',
-                isCompleted: 'true',
+                isCompleted: true,
                 name: 'lmf'
             },
             {
                 id: 2,
                 title: '睡觉',
-                isCompleted: 'false',
+                isCompleted: false,
                 name: 'sb'
             }
         ]
@@ -33,7 +33,7 @@ class App extends Component {
             todos: this.state.todos.concat({
                 id: Math.random(),
                 title: todoTitle,
-                isCompleted: 'false',
+                isCompleted: false,
                 name: 'sb2'
             })
         })
