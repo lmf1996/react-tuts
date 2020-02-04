@@ -39,6 +39,21 @@ class App extends Component {
         })
     };
 
+    onCompletedChange = (id) => {
+        console.log('onCompletedChange');
+        this.setState((prevState) => {
+                return {
+                    todos: prevState.todos.map(todo => {
+                        if (todo.id === id) {
+                            todo.isCompleted = !todo.isCompleted;
+                        }
+                        return todo
+                    })
+                }
+            }
+        )
+    };
+
     render() {
         return (
             //可以写<>,也可以写<Fragment>
@@ -47,7 +62,7 @@ class App extends Component {
             <Fragment>
                 <TodoHeader title={this.state.title}/>
                 <TodoInput addTodo={this.addTodo} btnText={"add"}/>
-                <TodoList todos={this.state.todos}/>
+                <TodoList todos={this.state.todos} onCompletdChange={this.onCompletedChange}/>
                 <Like/>
             </Fragment>
         );
