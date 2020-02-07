@@ -62,7 +62,7 @@ class App extends Component {
             <Fragment>
                 <TodoHeader title={this.state.title}/>
                 <TodoInput addTodo={this.addTodo} btnText={"add"}/>
-                <TodoList todos={this.state.todos} onCompletdChange={this.onCompletedChange}/>
+                <TodoList todos={this.state.todos} onCompletedChange={this.onCompletedChange}/>
                 <Like/>
             </Fragment>
         );
